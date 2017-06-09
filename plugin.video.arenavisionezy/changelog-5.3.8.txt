@@ -1,4 +1,3 @@
- 
 ===== Stable versions =======
 [B]v1.2.1 (09/12/2016)[/B]
  - Eliminar sopcast
@@ -40,3 +39,4 @@
 
 [B]v1.0 (06/05/2016)[/B]
  - First release
+
