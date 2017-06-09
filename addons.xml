@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
+<addon id='script.module.libtorrent' version='1.1.1g' name='python-libtorrent' provider-name='DiMartino, srg70, RussakHH, aisman, inpos'>
+  <requires>
+    <import addon='xbmc.python' version='2.1.0'/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.python.module" library="python_libtorrent"/>
+  <extension point='xbmc.addon.metadata'>
+    <platform>all</platform>
+    <summary lang='en'>script.module.libtorrent is a Kodi module that makes easy import of python-libtorrent for you.</summary>
+    <summary lang='ru'>script.module.libtorrent - модуль Kodi, который упрощает импорт библиотеки python-libtorrent.</summary>
+    <summary lang='es'>script.module.libtorrent es un módulo de Kodi que facilita la importación de la librería python-libtorrent.</summary>
+    <license>MIT License</license>
+    <source>https://github.com/DiMartinoXBMC/script.module.libtorrent</source>
+  </extension>
+  <extension point='xbmc.python.module'/>
+</addon>
+
+<addon id="plugin.video.deportesalacarta"
+    name="Deportesalacarta"
+    version="1.28"
+    provider-name="deportesalacarta">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.libtorrent" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <license>GNU GPL v3</license>
+    <source></source>
+  </extension>
+</addon>
+
+<addon id="plugin.video.f4mTester" version="2.7.1" name="f4mTester" provider-name="Shani">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+        <import addon="script.video.F4mProxy" version="2.7.1"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+
+
+    <extension point="xbmc.addon.metadata">
+        <summary>f4mTester</summary>
+        <description></description>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="plugin.video.pelisalacarta"
     name="pelisalacarta"
     version="4.2.0~final"
@@ -24,6 +78,51 @@
     <source>https://github.com/tvalacarta/pelisalacarta</source>
   </extension>
   <extension point="xbmc.service" library="library_service.py" start="login|startup">
+  </extension>
+</addon>
+
+<addon id="script.limpiarkodi"
+       name="[COLOR blue]Limpia[/COLOR][COLOR yellow] Tu[/COLOR][COLOR red] Kodi[/COLOR]"
+       version="0.0.5"
+       provider-name="Catoal">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+ 	<extension point="xbmc.python.pluginsource" library="default.py">
+		<provides>executable</provides>
+	</extension>
+  <extension point="xbmc.service" library="service.py" start="startup" />
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary>Limpiar</summary>
+    <description>Limpia los Caches de Kodi.</description>
+    <language></language>
+    <license></license>
+    <source></source>
+    <forum></forum>
+    <website></website>
+  </extension>
+</addon>
+
+<addon id="script.video.F4mProxy"
+	     name="F4mProxy"
+	     version="2.8.7"
+	     provider-name="Shani">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0" />
+    <import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.module" library="lib" />
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+		<provides>executable</provides>
+  </extension>
+
+
+
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <summary lang="en">Proxy for f4m</summary>
+    <description lang="en">Use this addon to play F4m v1 and v2 streams</description>
   </extension>
 </addon>
 
@@ -56,18 +155,94 @@
 	</extension>
 </addon>
 
+<addon id="plugin.video.tvalacarta"
+    name="tvalacarta"
+    version="4.0.5"
+    provider-name="tvalacarta">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="es">Televisión a la carta</summary>
+    <description lang="es">Para ver la televisión por Internet, a la carta y desde tu media center</description>
+    <summary lang="en">TV on demand (Spanish)</summary>
+    <description lang="en">Watch on demand spanish TV from your media center</description>
+    <platform>all</platform>
+    <license>GNU GPL v3</license>
+    <forum>http://www.mimediacenter.info/foro</forum>
+    <website>http://blog.tvalacarta.info/plugin-xbmc/tvalacarta</website>
+    <email>tvalacarta@gmail.com</email>
+    <source>https://github.com/tvalacarta/tvalacarta</source>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="login|startup">
+  </extension>
+</addon>
 
-<addon id="repository.llaurator" name="llaurator official Repo" version="1.0.0" provider-name="Llaurator">
-	<extension point="xbmc.addon.repository" name="llaurator official Repo">
+<addon id="plugin.program.advancedsettings"
+       name="Easy Advanced Settings"
+       version="0.8.9"
+       provider-name="kinkin">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource"
+               	library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <summary>Create, view, edit and delete your advancedsettings.xml file in a user-friendly gui</summary>
+        <description>All settings follow the xbmc.org wiki[CR][CR]With this tool you can create your advanced settings directly from XBMC[CR][CR]If you don't know what a setting does, don't enable it!</description>
+        <platform>all</platform>
+        <language>en</language>
+        <license>GNU GENERAL PUBLIC LICENSE</license>
+        <forum></forum>
+        <website></website>
+        <source></source>
+        <email></email>
+    </extension>
+
+</addon>
+
+<addon id="repository.llaurator" name="Llaurator Repo Official" version="1.0.0" provider-name="Llaurator">
+	<extension point="xbmc.addon.repository" name="Llaurator Repo Official">
 		<info compressed="false">https://raw.githubusercontent.com/llaurator/llaurator-repo/master/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/llaurator/llaurator-repo/master/addons.xml.md5</checksum>
-		<datadir zip="true">https://raw.githubusercontent.com/llaurator/llaurator-repo/master</datadir>
+		<datadir zip="true">https://raw.githubusercontent.com/llaurator/llaurator-repo/master/</datadir>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>llaurator official Repo</summary>
-   		<description lang="en">Instala los Addons recomendados por llaurator.</description>
+		<summary>Llaurator Repo Official</summary>
+   		<description>Instala los Addons recomendados por llaurator.</description>
 		<disclaimer></disclaimer>
 		<platform>all</platform>
 	</extension>
+</addon>
+
+<addon id="program.plexus"
+       name="Plexus"
+       version="0.1.6.a"
+       provider-name="enen92, TVAddons, RonnieHD">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.requests" />
+  </requires>
+  <extension point="xbmc.python.pluginsource"
+            library="default.py">
+        <provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary>SopCast and AceStream for Kodi</summary>
+    <description lang="en">Plexus - Any complex structure containing an intricate network of parts. Plexus brings native peer-to-peer support (AceStream and SopCast) for Kodi Entertainment Center for several platforms.[CR][CR]Documentation: (missing)</description>
+    <description lang="pt">Plexus - Uma estrutura complexa constituída por uma rede de partes. O Plexus adiciona suporte peer-to-peer nativo (AceStream e Sopcast) ao Kodi Entertainment Center para várias plataformas.[CR][CR]Documentação: (em falta)</description>
+    <description lang="es">Plexus - Una estructura compleja conteniendo una intrincada red de partes. Plexus añade soporte nativo peer-to-peer (AceStream y SopCast) al Centro de Entretenimiento Kodi para varias plataformas.[CR][CR]Documentacion: (falta)</description>
+	<disclaimer lang="en">The author does not host nor distribute any of the content you may watch using this addon. The author has no part in the development of any included technologies. When seeking help in Kodi's forum please respect rules (http://kodi.wiki/view/Forum_rules).</disclaimer>
+    <disclaimer lang="pt">Os autores não alojam nem distribuem nenhum do conteúdo que poderá ser reproduzido a partir deste addon. Os autores não têm qualquer parte no desenvolvimento de qualquer uma das tecnologias. Se procurar ajuda no fórum oficial do Kodi por favor respeite as regras do fórum (http://kodi.wiki/view/Forum_rules).</disclaimer>
+   	<disclaimer lang="es">El autor no aloja ni distribuye cualquier contenido que ud. pudiera reproducir usando este addon. El autor no tiene participacion en el desarrollo de cualquier tecnologia incluida. Cuando requiera ayuda en el foro de Kodi por favor respete las reglas (http://kodi.wiki/view/Forum_rules).</disclaimer>
+    <platform>all</platform>
+  </extension>
 </addon>
 </addons>
