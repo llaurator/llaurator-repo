@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.llaurator" name="Llaurator Repo Official" version="1.0.1" provider-name="Llaurator">
+<addon id="repository.llaurator" name="[COLOR green]Llaurator Repo[/COLOR]" version="1.0.2" provider-name="Llaurator">
 	<extension point="xbmc.addon.repository" name="Llaurator Repo Official">
 		<info compressed="false">https://raw.githubusercontent.com/llaurator/llaurator-repo/master/addons.xml</info>
 		<checksum>https://raw.githubusercontent.com/llaurator/llaurator-repo/master/addons.xml.md5</checksum>
