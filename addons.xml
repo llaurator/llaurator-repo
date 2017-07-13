@@ -226,7 +226,7 @@
 
 <addon id="plugin.video.pelisalacarta"
     name="pelisalacarta"
-    version="4.2.0~final-c7"
+    version="4.2.0~final-c8"
     provider-name="tvalacarta">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
