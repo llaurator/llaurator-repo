@@ -467,6 +467,20 @@ Gracias por su preferencia [COLOR cyan][B]BassFox[/B][/COLOR] based on Livetream
 
 </addon>
 
+<addon id="repository.alfa-addon" name="[COLOR red]Alfa-Addon[/COLOR] Repo" version="1.0.1" provider-name="Alfa-Addon">
+    <extension point="xbmc.addon.repository" name="Alfa-Addon Repo">
+        <info>https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/alfa-addon/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/alfa-addon/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/alfa-addon/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Repositorio para Alfa-Addon</summary>
+        <description></description>
+        <disclaimer>The owners and submitters to this repository do not host or distribute any of the content displayed by these addons nor do they have any affiliation with the content providers.</disclaimer>
+        <platform>all</platform>
+    </extension>
+</addon>
+
 <addon id="repository.llaurator" name="[COLOR crimson]Llaurator Repo[/COLOR]" version="1.0.2" provider-name="Llaurator">
 	<extension point="xbmc.addon.repository" name="Llaurator Repo Official">
 		<info compressed="false">https://raw.githubusercontent.com/llaurator/llaurator-repo/master/addons.xml</info>
