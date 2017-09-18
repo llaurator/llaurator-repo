@@ -1,3 +1,13 @@
+[B]Version 2.8.1[/B]
+regex in title and thumbnail BUGFIX revised again
+[B]Version 2.8.0[/B]
+regex in title and thumbnail BUGFIX revised
+[B]Version 2.7.9[/B]
+regex in title and thumbnail BUGFIX
+[B]Version 2.7.8[/B]
+regex in title and thumbnail
+[B]Version 2.7.7[/B]
+download as mp3 if the name contains [mp3]
 [B]Version 2.7.6[/B]
 dont show error when regex contains notplayable --bug fix
 [B]Version 2.7.5[/B]
