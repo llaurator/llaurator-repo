@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
 <addon id="plugin.video.SportsDevil"
-  version="2017.06.03"
+  version="2018.01.19-Jairox"
   name="SportsDevil"
   provider-name="SportsDevil">
   <requires>
@@ -10,17 +10,20 @@
    <import addon="script.module.simplejson" />
    <import addon="script.module.six" />
    <import addon="script.module.requests" />
-   <import addon="script.module.livestreamer" />
+   <import addon="script.module.streamlink.base" />
    <import addon="script.video.F4mProxy" />
    <import addon="plugin.video.f4mTester" />
   </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
+  <extension
+    point="xbmc.python.pluginsource"
+    library="default.py">
    <provides>video</provides>
   </extension>
-  <extension point="xbmc.service" library="service/proxy_service.py" start="startup" />
+  <extension point="xbmc.service" library="service/streamlink_proxy.py" start="startup" />
   <extension point="xbmc.addon.metadata">
-    <summary>Play videos of different sports streaming sites</summary>
-    <description>Play videos of different sports streaming sites</description>
+    <summary lang="en">SportsDevil addon</summary>
+    <description lang="en">Versión de Jairox con algún Catcher modificado por Goldonx... Play videos of different ad-financed sports streaming sites.</description>
+    <disclaimer lang="en">Versión de Jairox con algún Catcher modificado por Goldonx... SportsDevil does not provide any streams of its own; stream quality, content and copyright are responsibility of the ad-financed source web site. For updates - check the readme.</disclaimer>
     <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
     <platform>all</platform>
   </extension>
@@ -43,6 +46,38 @@
     <source>https://github.com/DiMartinoXBMC/script.module.libtorrent</source>
   </extension>
   <extension point='xbmc.python.module'/>
+</addon>
+
+<addon id="plugin.video.blackghost"
+       name="Black Ghost"
+       version="0.0.2"
+       provider-name="Black">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" />
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+
+
+  <extension point="xbmc.addon.metadata">
+    <summary>BlackGhost Addon</summary>
+    <description>
+    </description>
+    <platform>all</platform>
+  </extension>
 </addon>
 
 <addon id="plugin.video.deportesalacarta"
@@ -161,56 +196,32 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.adryanlist"
-       name="AdryanList"
-       version="2.8.1"
-       provider-name="Adryan">
-  <requires>
-    <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.beautifulsoup" version="3.2.1"/>
-    <import addon="script.module.simple.downloader" version="0.9.4"/>
-    <import addon="script.module.beautifulsoup4" />
-    <import addon="script.module.requests" />
-    <import addon="script.module.httplib2" />
-    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
-    <import addon="script.module.youtube.dl" optional="true"/>
-    <import addon="plugin.video.youtube" optional="true" />
-    <import addon="script.module.urlresolver" />
-    <import addon="script.module.simplejson" />
-     <import addon="script.module.livestreamer" optional="true"/>
-     <import addon="script.module.pyamf" optional="true"/>
-  </requires>
-  <extension point="xbmc.python.pluginsource" library="default.py">
-    <provides>video</provides>
-  </extension>
-
-
-  <extension point="xbmc.addon.metadata">
-    <summary>AdryanList  - Television - Peliculas - Series</summary>
-    <description>Adryanlist
-    </description>
-    <platform>all</platform>
-  </extension>
+    <addon id="repository.twilight0.libs" name="Twilight0 Libs Repository" version="1.0.0" provider-name="Twilight0">
+        <extension point="xbmc.addon.repository" name="Twilight0 Libs Repository">
+            <info compressed="false">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml</info>
+            <checksum>http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/addons.xml.md5</checksum>
+            <datadir zip="true">http://raw.githubusercontent.com/Twilight0/repo.twilight0.libs/master/_zips/</datadir>
+            <hashes>false</hashes>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Repository for library addons</summary>
+            <description>Repository for library addons</description>
+            <platform>all</platform>
+    </extension>
 </addon>
 
-<addon id="repository.adryan" name="Adryan's Kodi Add-on Repository" version="1.0" provider-name="adryan">
-	<extension point="xbmc.addon.repository" name="Adryan's Kodi Add-on Repository">
-		<dir>
-			<info compressed="false">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml</info>
-			<checksum>https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/addons.xml.md5</checksum>
-			<datadir zip="true">https://offshoregit.com/tvaresolvers/tva-common-repository/raw/master/zips/</datadir>
-		</dir>
-		<info compressed="false">https://offshoregit.com/adryan/addons.xml</info>
-		<checksum>https://offshoregit.com/adryan/addons.xml.md5</checksum>
-		<datadir zip="true">https://offshoregit.com/adryan/</datadir>
-	</extension>
-	<extension point="xbmc.addon.metadata">
-		<summary>Adryan's Kodi Add-on Repository</summary>
-		<description>Adryan's Kodi Add-on Repository. Please visit www.tvaddons.ag for assistance with this add-on.</description>
-		<platform>all</platform>
-	    <forum>https://www.tvaddons.ag/forums/</forum>
-	    <website>http://www.tvaddons.ag/</website>
-	</extension>
+<addon id="repository.CanalNereo" name="[COLOR lime]Repo Canal Nereo[/COLOR] Repo" version="1.0.2" provider-name="Canal Nereo">
+    <extension point="xbmc.addon.repository" name="Mi repositorio">
+        <info>https://raw.githubusercontent.com/canalnereo/RepoCanalNereo/master/Repositorio/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/canalnereo/RepoCanalNereo/master/Repositorio/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/canalnereo/RepoCanalNereo/master/Repositorio/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Repositorio para Mi</summary>
+        <description></description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+    </extension>
 </addon>
 
 <addon id="plugin.video.exabytetv"
@@ -249,30 +260,48 @@
   </extension>
 </addon>
 
-<addon id="plugin.video.pelisalacarta"
-    name="pelisalacarta"
-    version="4.2.0~final-c10"
-    provider-name="tvalacarta">
+<addon id="plugin.video.live.streamspro"
+       name="LiveStreamsPro"
+       version="2.8.1"
+       provider-name="Shani">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
-    <import addon="script.module.libtorrent" optional="true"/>
+    <import addon="script.module.beautifulsoup" version="3.2.1"/>
+    <import addon="script.module.simple.downloader" version="0.9.4"/>
+    <import addon="script.module.beautifulsoup4" />
+    <import addon="script.module.requests" />
+    <import addon="script.module.httplib2" />
+    <import addon="script.module.liveresolver" version="0.1.24" optional="true"/>
+    <import addon="script.module.youtube.dl" optional="true"/>
+    <import addon="plugin.video.youtube" optional="true" />
+    <import addon="script.module.urlresolver" optional="true"/>
+    <import addon="script.module.simplejson" />
+     <import addon="script.module.livestreamer" optional="true"/>
+     <import addon="script.module.pyamf" optional="true"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
     <provides>video</provides>
   </extension>
+
+
   <extension point="xbmc.addon.metadata">
-    <summary lang="es">Películas y series a la carta</summary>
-    <description lang="es">Películas, series, documentales, anime, ... Todo está en Internet, y ahora en tu media center.</description>
-    <summary lang="en">Movies and TV Shows on demand</summary>
-    <description lang="en">Movies, Series, Documentaries, Anime, ... Everything is on the net, and now on your media center.</description>
+    <summary>livestreamspro- shamelessly forked from livestreams but added many thinks</summary>
+    <description>
+        In addition to what livestreams allowed you to do, you can now,
+        1. call regex in regex,
+        2. multiple regex in page, regex in session, also htmlunescape responses
+        3. create session from one regex and pass onto next in line
+        4. save sessions to a file and open again later
+        5. write python code in .py file, put in the profile directory and then call from your regex.
+        6. use epoctime, guid and unpack as functions already defined.
+        7. Use it to post values to the pages to get the proper responses
+        8. support many headers, like origin, X-Requested-With
+        9. you can now append cookies in response and then read in regex using includeheaders
+        10. You can now link to another web url via your xml using externallink
+        11. support for google captcha, now you can show and then post the text
+
+    </description>
     <platform>all</platform>
-    <license>GNU GPL v3</license>
-    <forum>http://www.mimediacenter.info/foro</forum>
-    <website>http://blog.tvalacarta.info/plugin-xbmc/pelisalacarta</website>
-    <email>tvalacarta@gmail.com</email>
-    <source>https://github.com/tvalacarta/pelisalacarta</source>
-  </extension>
-  <extension point="xbmc.service" library="library_service.py" start="login|startup">
   </extension>
 </addon>
 
@@ -462,7 +491,7 @@ Gracias por su preferencia [COLOR cyan][B]BassFox[/B][/COLOR] based on Livetream
 
 <addon id="plugin.video.tvalacarta"
     name="tvalacarta"
-    version="4.0.5"
+    version="4.1.0"
     provider-name="tvalacarta">
   <requires>
     <import addon="xbmc.python" version="2.1.0"/>
@@ -474,7 +503,7 @@ Gracias por su preferencia [COLOR cyan][B]BassFox[/B][/COLOR] based on Livetream
     <summary lang="es">Televisión a la carta</summary>
     <description lang="es">Para ver la televisión por Internet, a la carta y desde tu media center</description>
     <summary lang="en">TV on demand (Spanish)</summary>
-    <description lang="en">Watch on demand spanish TV from your media center</description>
+    <description lang="en">Watch on demand spanish TV on your media center</description>
     <platform>all</platform>
     <license>GNU GPL v3</license>
     <forum>http://www.mimediacenter.info/foro</forum>
@@ -578,5 +607,19 @@ Gracias por su preferencia [COLOR cyan][B]BassFox[/B][/COLOR] based on Livetream
    	<disclaimer lang="es">El autor no aloja ni distribuye cualquier contenido que ud. pudiera reproducir usando este addon. El autor no tiene participacion en el desarrollo de cualquier tecnologia incluida. Cuando requiera ayuda en el foro de Kodi por favor respete las reglas (http://kodi.wiki/view/Forum_rules).</disclaimer>
     <platform>all</platform>
   </extension>
+</addon>
+
+<addon id="repository.MagyckPi" name="[COLOR deeppink]Magyck[/COLOR][COLOR lime]Pi[/COLOR][COLOR gold] Repo[/COLOR]" version="1.5.8" provider-name="_*JoSe*_">
+    <extension point="xbmc.addon.repository" name="MagyckPi Jose">
+        <info>https://raw.githubusercontent.com/RetroBlogPi/MagyckPi/master/Repositorio/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/RetroBlogPi/MagyckPi/master/Repositorio/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/RetroBlogPi/MagyckPi/master/Repositorio/</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Repositorio para los mios</summary>
+        <description></description>
+        <disclaimer></disclaimer>
+        <platform>all</platform>
+    </extension>
 </addon>
 </addons>
